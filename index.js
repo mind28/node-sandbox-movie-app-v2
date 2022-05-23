@@ -1,4 +1,5 @@
 const express = require('express')
+const favicon = require('express-favicon');
 const colors = require('colors')
 morgan = require('morgan')
 const dotenv = require('dotenv').config()
@@ -7,6 +8,8 @@ const connectDB = require('./config/db')
 connectDB()
 
 const app = express()
+
+app.use(favicon(__dirname + '/public/favicon.ico'));
 
 // Mongoose
 const mongoose = require('mongoose');
